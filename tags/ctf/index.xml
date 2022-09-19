@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CTF on Xrzheaven</title><link>https://xrzhev.com/tags/ctf/</link><description>Recent content in CTF on Xrzheaven</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>xrzhev</copyright><lastBuildDate>Sun, 05 Jun 2022 14:42:52 +0900</lastBuildDate><atom:link href="https://xrzhev.com/tags/ctf/index.xml" rel="self" type="application/rss+xml"/><item><title>SECCON Beginners CTF 2022 Writeup</title><link>https://xrzhev.com/posts/2022-06-05/</link><pubDate>Sun, 05 Jun 2022 14:42:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-06-05/</guid><description>2022/06/04 ~ 2022/06/05まで開催されたSECCON Beginners CTF 2022のwriteup。
+チーム DCDC で出場した。 チーム得点：2108pt チーム順位：14位 / 891チーム 人数制限がないCTF？だったため、DCDCで動けるメンバーが多数動員され、ライブ感のある楽しいCTFだった。
+DCDCメンバーからはSECCON4b作問者メンバーがおり、すごいチームだなあと感じる。
+以下、私の解いた問題のWriteup。
+web gallery (83pt) 以下の画像のようにFlag自体はすぐ見つかる。
+しかし、ファイルを開いても?????????...[snip]と表示され、マトモにPDFを見ることができない。
+ソースコードを確認すると、レスポンスのサイズにサイズ制限がかけられており、これが悪さしていると考えた。
+HTTPのリクエストには範囲リクエストというものがあり、サーバー側が対応していればコンテンツを分割要求することができる。 今回はそれを利用することで攻略した。 https://developer.mozilla.org/ja/docs/Web/HTTP/Range_requests
+curl https://gallery.quals.beginners.seccon.jp/images/flag_7a96139e-71a2-4381-bf31-adf37df94c04.pdf -i -H &amp;#34;Range: bytes=0-10000&amp;#34; -o 1.pdf_chunk curl https://gallery.quals.beginners.seccon.jp/images/flag_7a96139e-71a2-4381-bf31-adf37df94c04.pdf -i -H &amp;#34;Range: bytes=10001-20000&amp;#34; -o 2.pdf_chunk curl https://gallery.quals.beginners.seccon.jp/images/flag_7a96139e-71a2-4381-bf31-adf37df94c04.pdf -i -H &amp;#34;Range: bytes=20001-30000&amp;#34; -o 3.pdf_chunk curl https://gallery.quals.beginners.seccon.jp/images/flag_7a96139e-71a2-4381-bf31-adf37df94c04.pdf -i -H &amp;#34;Range: bytes=30001-40000&amp;#34; -o 4.pdf_chunk curl https://gallery.quals.beginners.seccon.jp/images/flag_7a96139e-71a2-4381-bf31-adf37df94c04.pdf -i -H &amp;#34;Range: bytes=40001-50000&amp;#34; -o 5.pdf_chunk cat *.pdf_chunk &amp;gt; out.</description></item><item><title>Space Heroes CTF Writeup</title><link>https://xrzhev.com/posts/2022-04-04/</link><pubDate>Mon, 04 Apr 2022 10:42:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-04/</guid><description>2022/04/01 ~ 2022/04/03まで開催されたSpace Heroes CTFのwriteup。
+チーム DCDC で出場した。
+個人得点：754pt チーム得点：2454pt チーム順位：62位 / 778チーム forensics問しか解いてないけど、OpenCVでガチャガチャやったので備忘として残しておく。
+Forensics Star Pcap (100pt) pcapファイルが渡される。
+中身はICMPのみが取得されているただのパケットキャプチャファイルだが、ICMP codeがASCIIと同期している。
+ICMP Codeを読めばフラグ。
+shctf{L0g1c-i$-th3-begiNNing-0f-wi$doM}
+Netflix and CTF (100pt) pcapファイルが渡される。
+中身はHTTP通信を中心として取得されているただのパケットキャプチャファイル。
+定期的にPOSTしており、/keypress/Lit_〇ではキーを押下したタイミングでPOSTが投げられているっぽい。
+Lit_〇の部分を抜粋して結合するとフラグ。
+shctf{T1m3-is-th3-ultimat3-curr3Ncy}
+The Legend of the Chozo (100pt) corruptedData.chrという謎のファイルが渡される。
+バイナリを読むと普通にPNGファイルのファイルヘッダをいい感じに修正すればOK。
+修正前：
+00000000: 5047 890a 4e0d 0a1a 0d48 4400 5200 0049 PG..N....HD.R..I 00000010: 0000 00f0 0000 0139 0806 0000 00ae c5ad .......9........ ----snip to EOF--- 修正後：
+00000000: 8950 4e47 0d0a 1a0a 0000 000d 4948 4452 .</description></item></channel></rss>

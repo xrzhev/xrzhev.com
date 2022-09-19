@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>お気持ち on Xrzheaven</title><link>https://xrzhev.com/tags/%E3%81%8A%E6%B0%97%E6%8C%81%E3%81%A1/</link><description>Recent content in お気持ち on Xrzheaven</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>xrzhev</copyright><lastBuildDate>Wed, 06 Apr 2022 20:12:19 +0900</lastBuildDate><atom:link href="https://xrzhev.com/tags/%E3%81%8A%E6%B0%97%E6%8C%81%E3%81%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>メールのドメイン認証まとめ</title><link>https://xrzhev.com/posts/2022-04-06/</link><pubDate>Wed, 06 Apr 2022 20:12:19 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-06/</guid><description>すでに枯れた技術なのにミドルウェアの設定がめんどくさいメールサーバー。
+メールサーバーを作るとき、色々見ながら設定はするけどよくわからんドメイン認証。
+新年度ということもあり、初心者でもメールサーバーを構築するにあたって使うであろうドメイン認証の一覧を簡単な説明を載せて書いておく。
+各技術はそれ相応に深いもので、本ページだけでの理解は難しいため、適宜色々な解説サイトやRFCを読み込んで仕様を理解してほしい。
+ドメイン認証とは メールの送付元ドメインが &amp;ldquo;本物&amp;rdquo; であることをチェックする為に使われている技術。
+これはメールの仕様上、メールの送信元をユーザー側から見たときにある程度詐称できることからきている。
+送信元メールサーバーから送付先メールサーバーに届けられるメールの中には宛先・送信者にまつわる2つの重要なデータが存在している。
+それが エンベロープ と ヘッダー 。
+上記の言葉については様々なサイトで解説しているので割愛するが、基本的にヘッダーを書き換えることでなりすましができる。
+以下のプログラムは、なりすましメールを作ることができるもの。
+#!/usr/bin/env python3 ########### ### 免責事項 ########### # # 本プログラムは検証・勉強用途のみに利用すること。 # 本プログラムを利用して発生したいかなる事象に対し著者は一切の責任を持たない。 # from smtplib import SMTP from email.mime.text import MIMEText # Envelope ENVELOPE_TO = &amp;#34;realreceiver@to.example.com&amp;#34; ENVELOPE_FROM = &amp;#34;realsender@from.example.com&amp;#34; # Header (Fake) HEADER_TO = &amp;#34;fakereceiver@fake.to.example.com&amp;#34; HEADER_FROM = &amp;#34;fakesender@fake.from.example.com&amp;#34; # SMTP Server SMTP_HOST = &amp;#34;smtp.example.com&amp;#34; SMTP_USER = &amp;#34;exampleuser&amp;#34; SMTP_PASS = &amp;#34;examplepass&amp;#34; # Header and Body body = &amp;#34;hogehoge&amp;#34; msg = MIMEText(body, &amp;#34;html&amp;#34;) msg[&amp;#34;Subject&amp;#34;] = &amp;#34;Fake Email&amp;#34; # 以下のTo, Fromを書き換えればなりすましが可能（メールヘッダー） msg[&amp;#34;To&amp;#34;] = HEADER_TO msg[&amp;#34;From&amp;#34;] = HEADER_FROM MESSAGE = msg.</description></item><item><title>ブログを作った</title><link>https://xrzhev.com/posts/2022-04-01/</link><pubDate>Thu, 31 Mar 2022 16:51:11 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-01/</guid><description>作った理由とか 私はすでにはてなブログ (net-nyan-cat)を持っている。(大して記事書いてないけど)
+しかしながら昨今の事情でいろいろやっていきにくいところがあるため、特に使っていなかったVPSを利用して自分でブログを作成し運用することにした。
+なんでHugoで作ったか このブログはHugoと呼ばれる静的サイトジェネレーターで作成している。
+理由は単純でWordPressの運用がめんどくさいから。
+昨今のセキュリティ事情を見るととても自前で運用する気にならない。
+ある程度知識がついてくると、これが厄介でパラノイア並みのセキュリティ設定を入れたくなってしまう。(これは同業者あるあるなのか？)
+WAF入れるのだって面倒だし金もかかることもあるし。
+静的サイトジェネレータで記事を書くことは少し面倒だが、PHPやRuby, Pythonといったスクリプト言語をサーバー上で動作させないから安全。
+Markdownで書いた記事をHTMLに変換してくれるので表示が早く、サーバー負荷もマジで少ない。
+とはいえ、記事の編集がめんどくさいのはあるし、「出先で気軽に更新」なんてのは少しやりにくいかもしれない。特に画像！静的サイトジェネレータと相性がよくない。
+WordPressのWYSIWYGエディタになれるとそこがとても不便に感じる。
+（そもそも筆が遅い、筆をまともにとらないのであまり問題はないが…。)
+まあ手軽に安全性をとれるならトレードオフか、と考えている。
+デザインのカスタムとかもこっちのほうが気軽にできて楽しそうだし。
+書く記事とか 自身の調査・研究内容を書こうと考えている。
+セキュリティとかハードウェアとか無線とかその辺。
+あとは仕事で利用したツールや技術の備忘録代わりとしても使ってきたい。(こっちがメインか？) ハードウェア(無線デバイスとかハードウェアハックに必要なアイテムたち)もtwitterで少しつぶやいただけで厄介オタクがDMに殴りこんできて治安が悪いんだよな…。
+俺は楽しいインターネットが好きなので、俺やその同類が幸せになれる、そんな記事を書いていきたい。
+やっていき！</description></item></channel></rss>
