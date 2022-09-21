@@ -4,8 +4,6 @@
 <link rel=preload href=/lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
 <link rel=preload href=/lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous>
 <link rel=preload href=/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<script type=text/javascript src=https://latest.cactus.chat/cactus.js></script>
-<link rel=stylesheet href=https://latest.cactus.chat/style.css type=text/css>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <title> メールのドメイン認証まとめ | Xrzheaven</title>
@@ -15,36 +13,16 @@
 <meta name=robots content="all,follow">
 <meta name=googlebot content="index,follow,snippet,archive">
 <meta property="og:title" content="メールのドメイン認証まとめ">
-<meta property="og:description" content="すでに枯れた技術なのにミドルウェアの設定がめんどくさいメールサーバー。
-メールサーバーを作るとき、色々見ながら設定はするけどよくわからんドメイン認証。
-新年度ということもあり、初心者でもメールサーバーを構築するにあたって使うであろうドメイン認証の一覧を簡単な説明を載せて書いておく。
-各技術はそれ相応に深いもので、本ページだけでの理解は難しいため、適宜色々な解説サイトやRFCを読み込んで仕様を理解してほしい。
-ドメイン認証とは メールの送付元ドメインが &ldquo;本物&rdquo; であることをチェックする為に使われている技術。
-これはメールの仕様上、メールの送信元をユーザー側から見たときにある程度詐称できることからきている。
-送信元メールサーバーから送付先メールサーバーに届けられるメールの中には宛先・送信者にまつわる2つの重要なデータが存在している。
-それが エンベロープ と ヘッダー 。
-上記の言葉については様々なサイトで解説しているので割愛するが、基本的にヘッダーを書き換えることでなりすましができる。
-以下のプログラムは、なりすましメールを作ることができるもの。
-#!/usr/bin/env python3 ########### ### 免責事項  ########### # # 本プログラムは検証・勉強用途のみに利用すること。 # 本プログラムを利用して発生したいかなる事象に対し著者は一切の責任を持たない。  # from smtplib import SMTP from email.mime.text import MIMEText # Envelope ENVELOPE_TO = &#34;realreceiver@to.example.com&#34; ENVELOPE_FROM = &#34;realsender@from.example.com&#34; # Header (Fake) HEADER_TO = &#34;fakereceiver@fake.to.example.com&#34; HEADER_FROM = &#34;fakesender@fake.from.example.com&#34; # SMTP Server SMTP_HOST = &#34;smtp.example.com&#34; SMTP_USER = &#34;exampleuser&#34; SMTP_PASS = &#34;examplepass&#34; # Header and Body body = &#34;hogehoge&#34; msg = MIMEText(body, &#34;html&#34;) msg[&#34;Subject&#34;] = &#34;Fake Email&#34; # 以下のTo, Fromを書き換えればなりすましが可能（メールヘッダー） msg[&#34;To&#34;] = HEADER_TO msg[&#34;From&#34;] = HEADER_FROM MESSAGE = msg.">
+<meta property="og:description" content="すでに枯れた技術なのにミドルウェアの設定がめんどくさいメールサーバー。 メールサーバーを作るとき、色々見ながら設定はするけどよくわからんドメイ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://xrzhev.com/posts/2022-04-06/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-04-06T20:12:19+09:00">
 <meta property="article:modified_time" content="2022-04-07T14:07:54+09:00">
-<meta property="og:image" content="https://xrzhev.com/posts/2022-04-06/img/ogp/index.png">
+<meta property="og:image" content="https://xrzhev.com/posts/2022-04-06/img/ogp/index.webp">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="メールのドメイン認証まとめ">
-<meta name=twitter:description content="すでに枯れた技術なのにミドルウェアの設定がめんどくさいメールサーバー。
-メールサーバーを作るとき、色々見ながら設定はするけどよくわからんドメイン認証。
-新年度ということもあり、初心者でもメールサーバーを構築するにあたって使うであろうドメイン認証の一覧を簡単な説明を載せて書いておく。
-各技術はそれ相応に深いもので、本ページだけでの理解は難しいため、適宜色々な解説サイトやRFCを読み込んで仕様を理解してほしい。
-ドメイン認証とは メールの送付元ドメインが &ldquo;本物&rdquo; であることをチェックする為に使われている技術。
-これはメールの仕様上、メールの送信元をユーザー側から見たときにある程度詐称できることからきている。
-送信元メールサーバーから送付先メールサーバーに届けられるメールの中には宛先・送信者にまつわる2つの重要なデータが存在している。
-それが エンベロープ と ヘッダー 。
-上記の言葉については様々なサイトで解説しているので割愛するが、基本的にヘッダーを書き換えることでなりすましができる。
-以下のプログラムは、なりすましメールを作ることができるもの。
-#!/usr/bin/env python3 ########### ### 免責事項  ########### # # 本プログラムは検証・勉強用途のみに利用すること。 # 本プログラムを利用して発生したいかなる事象に対し著者は一切の責任を持たない。  # from smtplib import SMTP from email.mime.text import MIMEText # Envelope ENVELOPE_TO = &#34;realreceiver@to.example.com&#34; ENVELOPE_FROM = &#34;realsender@from.example.com&#34; # Header (Fake) HEADER_TO = &#34;fakereceiver@fake.to.example.com&#34; HEADER_FROM = &#34;fakesender@fake.from.example.com&#34; # SMTP Server SMTP_HOST = &#34;smtp.example.com&#34; SMTP_USER = &#34;exampleuser&#34; SMTP_PASS = &#34;examplepass&#34; # Header and Body body = &#34;hogehoge&#34; msg = MIMEText(body, &#34;html&#34;) msg[&#34;Subject&#34;] = &#34;Fake Email&#34; # 以下のTo, Fromを書き換えればなりすましが可能（メールヘッダー） msg[&#34;To&#34;] = HEADER_TO msg[&#34;From&#34;] = HEADER_FROM MESSAGE = msg.">
-<meta name=twitter:image content="https://xrzhev.com/posts/2022-04-06/img/ogp/index.png">
+<meta name=twitter:description content="すでに枯れた技術なのにミドルウェアの設定がめんどくさいメールサーバー。 メールサーバーを作るとき、色々見ながら設定はするけどよくわからんドメイ">
+<meta name=twitter:image content="https://xrzhev.com/posts/2022-04-06/img/ogp/index.webp">
 <link rel=stylesheet href=https://xrzhev.com/css/styles.bffb01f49c32dfc08ab4bab122ea7a283cac2fb1be2e0ed85c8927eeff6b4431c3302f1bf04324ac1a7a255fabef5a2dcd172d756ee959224dc671c4db1f7af1.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
 <script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
 <link rel=icon type=image/png href=https://xrzhev.com/images/favicon.ico>
@@ -272,7 +250,7 @@ mail_serv<span style=color:#f92672>.</span>quit()
 <p>という形になる。<br>
 上記のプログラムでメールを送付した場合、fakesender, fakereceiverというFromヘッダーが改ざんされたメールが送付される。</p>
 <p>1件、個人で持っているメールアドレス宛に、ある種いい例といえるなりすまし迷惑メールが来ていたので紹介する。<br>
-<img src=./img/001.png alt=ゴミカスscam野郎></p>
+<img src=./img/001.webp alt=ゴミカスscam野郎></p>
 <p>赤く塗りつぶしている部分はすべて私が利用している同一のメールユーザーを示すもの。<br>
 上記のスクリーンショットは以下の点がおかしいといえる。</p>
 <ul>
