@@ -1,396 +1,88 @@
-<!doctype html><html lang=ja-jp>
-<head>
-<link rel=preload href=/lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<title> Space Heroes CTF Writeup | Xrzheaven</title>
-<link rel=canonical href=https://xrzhev.com/posts/2022-04-04/>
-<meta name=description content="いろいろやっていき">
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="all,follow">
-<meta name=googlebot content="index,follow,snippet,archive">
-<meta property="og:title" content="Space Heroes CTF Writeup">
-<meta property="og:description" content="2022/04/01 ~ 2022/04/03まで開催されたSpace Heroes CTFのwriteup。 チーム DCDC で出場した。 個人得点：754pt チーム得点：2454pt チ">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://xrzhev.com/posts/2022-04-04/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2022-04-04T10:42:52+09:00">
-<meta property="article:modified_time" content="2022-04-04T19:24:49+09:00">
-<meta property="og:image" content="https://xrzhev.com/posts/2022-04-04/img/ogp/index.webp">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Space Heroes CTF Writeup">
-<meta name=twitter:description content="2022/04/01 ~ 2022/04/03まで開催されたSpace Heroes CTFのwriteup。 チーム DCDC で出場した。 個人得点：754pt チーム得点：2454pt チ">
-<meta name=twitter:image content="https://xrzhev.com/posts/2022-04-04/img/ogp/index.webp">
-<link rel=stylesheet href=https://xrzhev.com/css/styles.bffb01f49c32dfc08ab4bab122ea7a283cac2fb1be2e0ed85c8927eeff6b4431c3302f1bf04324ac1a7a255fabef5a2dcd172d756ee959224dc671c4db1f7af1.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
-<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
-<link rel=icon type=image/png href=https://xrzhev.com/images/favicon.ico>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0JBLYFQ0B"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-M0JBLYFQ0B',{anonymize_ip:!1})}</script>
-</head>
-<body class="max-width mx-auto px3 ltr">
-<div class="content index py4">
-<div id=header-post>
-<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<!doctype html><html lang=ja-jp><head><link rel=preload href=/lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Space Heroes CTF Writeup | Xrzheaven</title>
+<link rel=canonical href=https://xrzhev.com/posts/2022-04-04/><meta name=description content="いろいろやっていき"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:title" content="Space Heroes CTF Writeup"><meta property="og:description" content="2022/04/01 ~ 2022/04/03まで開催されたSpace Heroes CTFのwriteup。 チーム DCDC で出場した。 個人得点：754pt チーム得点：2454pt チ"><meta property="og:type" content="article"><meta property="og:url" content="https://xrzhev.com/posts/2022-04-04/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-04-04T10:42:52+09:00"><meta property="article:modified_time" content="2022-04-04T19:24:49+09:00"><meta property="og:image" content="https://xrzhev.com/posts/2022-04-04/img/ogp/index.webp"><meta name=twitter:card content="summary"><meta name=twitter:title content="Space Heroes CTF Writeup"><meta name=twitter:description content="2022/04/01 ~ 2022/04/03まで開催されたSpace Heroes CTFのwriteup。 チーム DCDC で出場した。 個人得点：754pt チーム得点：2454pt チ"><meta name=twitter:image content="https://xrzhev.com/posts/2022-04-04/img/ogp/index.webp"><link rel=stylesheet href=https://xrzhev.com/css/styles.752d1b94f63350f4fdccbb127540cb597d37de3340624df5b28d34c36f35f7844a36fce9dbab1a3605619eb9d79d695d798f4d1c00d88bb4cd5189ff4069a2d4.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=icon type=image/png href=https://xrzhev.com/images/favicon.ico><script async src="https://www.googletagmanager.com/gtag/js?id=G-M0JBLYFQ0B"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-M0JBLYFQ0B",{anonymize_ip:!1})}</script></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><div id=header-post><a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
 <a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
-<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-<span id=menu>
-<span id=nav>
-<ul>
-<li><a href=/>Home</a></li>
-<li><a href=/posts>Posts</a></li>
-<li><a href=/categories>Categories</a></li>
-<li><a href=/tags>Tags</a></li>
-<li><a href=/index.xml>Rss</a></li>
-</ul>
-</span>
-<br>
-<span id=actions>
-<ul>
-<li>
-<a class=icon href=https://xrzhev.com/posts/2022-03-31/ aria-label=Previous>
-<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=https://xrzhev.com/posts/2022-04-06/ aria-label=Next>
-<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
-<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=# aria-label=Share>
-<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
-</a>
-</li>
-</ul>
-<span id=i-prev class=info style=display:none>Previous post</span>
+<a id=top-icon-tablet href=# onclick='$("html, body").animate({scrollTop:0},"fast")' style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu><span id=nav><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/categories>Categories</a></li><li><a href=/tags>Tags</a></li><li><a href=/index.xml>Rss</a></li></ul></span><br><span id=actions><ul><li><a class=icon href=https://xrzhev.com/posts/2022-03-31/ aria-label=Previous><i class="fas fa-chevron-left" aria-hidden=true onmouseover='$("#i-prev").toggle()' onmouseout='$("#i-prev").toggle()'></i></a></li><li><a class=icon href=https://xrzhev.com/posts/2022-04-06/ aria-label=Next><i class="fas fa-chevron-right" aria-hidden=true onmouseover='$("#i-next").toggle()' onmouseout='$("#i-next").toggle()'></i></a></li><li><a class=icon href=# onclick='$("html, body").animate({scrollTop:0},"fast")' aria-label="Top of Page"><i class="fas fa-chevron-up" aria-hidden=true onmouseover='$("#i-top").toggle()' onmouseout='$("#i-top").toggle()'></i></a></li><li><a class=icon href=# aria-label=Share><i class="fas fa-share-alt" aria-hidden=true onmouseover='$("#i-share").toggle()' onmouseout='$("#i-share").toggle()' onclick='return $("#share").toggle(),!1'></i></a></li></ul><span id=i-prev class=info style=display:none>Previous post</span>
 <span id=i-next class=info style=display:none>Next post</span>
 <span id=i-top class=info style=display:none>Back to top</span>
-<span id=i-share class=info style=display:none>Share post</span>
-</span>
-<br>
-<div id=share style=display:none>
-<ul>
-<li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&text=Space%20Heroes%20CTF%20Writeup" aria-label=Twitter>
-<i class="fab fa-twitter" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&title=Space%20Heroes%20CTF%20Writeup" aria-label=Linkedin>
-<i class="fab fa-linkedin" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="mailto:?subject=Space%20Heroes%20CTF%20Writeup&body=Check out this article: https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f" aria-label=Email>
-<i class="fas fa-envelope" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&title=Space%20Heroes%20CTF%20Writeup" aria-label=Pocket>
-<i class="fab fa-get-pocket" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&title=Space%20Heroes%20CTF%20Writeup" aria-label=reddit>
-<i class="fab fa-reddit" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&t=Space%20Heroes%20CTF%20Writeup" aria-label="Hacker News">
-<i class="fab fa-hacker-news" aria-hidden=true></i>
-</a>
-</li>
-</ul>
-</div>
-<div id=toc>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#forensics>Forensics</a>
-<ul>
-<li><a href=#star-pcap-100pt>Star Pcap (100pt)</a></li>
-<li><a href=#netflix-and-ctf-100pt>Netflix and CTF (100pt)</a></li>
-<li><a href=#the-legend-of-the-chozo-100pt>The Legend of the Chozo (100pt)</a></li>
-<li><a href=#interstellar-mystery-254pt>Interstellar Mystery (254pt)</a></li>
-<li><a href=#buzzs-secret-watch-part-1-100pt>Buzz&rsquo;s Secret Watch (Part 1) (100pt)</a></li>
-<li><a href=#buzzs-secret-watch-part-2-100pt>Buzz&rsquo;s Secret Watch (Part 2) (100pt)</a></li>
-</ul>
-</li>
-<li><a href=#お気持ち>お気持ち</a></li>
-</ul>
-</nav>
-</div>
-</span>
-</div>
-<article class=post itemscope itemtype=http://schema.org/BlogPosting>
-<header>
-<h1 class=posttitle itemprop="name headline">
-Space Heroes CTF Writeup
-</h1>
-<div class=meta>
-<div class=postdate>
-投稿日: <time datetime="2022-04-04 10:42:52 +0900 +0900" itemprop=datePublished>2022-04-04 10:42</time>
-</div>
-<div class=lastmoddate>
-最終更新日: <time datetime="2022-04-04 19:24:49 +0900 +0900" itemprop=dateModified>2022-04-04 19:24</time>
-</div>
-<div class=article-category>
-<i class="fas fa-archive"></i>
-<a class=category-link href=/categories/ctf>CTF</a>
-</div>
-<div class=article-tag>
-<i class="fas fa-tag"></i>
+<span id=i-share class=info style=display:none>Share post</span></span><br><div id=share style=display:none><ul><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&text=Space%20Heroes%20CTF%20Writeup" aria-label=Twitter><i class="fab fa-twitter" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&title=Space%20Heroes%20CTF%20Writeup" aria-label=Linkedin><i class="fab fa-linkedin" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=Space%20Heroes%20CTF%20Writeup&body=Check out this article: https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f" aria-label=Email><i class="fas fa-envelope" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&title=Space%20Heroes%20CTF%20Writeup" aria-label=Pocket><i class="fab fa-get-pocket" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&title=Space%20Heroes%20CTF%20Writeup" aria-label=reddit><i class="fab fa-reddit" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&t=Space%20Heroes%20CTF%20Writeup" aria-label="Hacker News"><i class="fab fa-hacker-news" aria-hidden=true></i></a></li></ul></div><div id=toc><nav id=TableOfContents><ul><li><a href=#forensics>Forensics</a><ul><li><a href=#star-pcap-100pt>Star Pcap (100pt)</a></li><li><a href=#netflix-and-ctf-100pt>Netflix and CTF (100pt)</a></li><li><a href=#the-legend-of-the-chozo-100pt>The Legend of the Chozo (100pt)</a></li><li><a href=#interstellar-mystery-254pt>Interstellar Mystery (254pt)</a></li><li><a href=#buzzs-secret-watch-part-1-100pt>Buzz&rsquo;s Secret Watch (Part 1) (100pt)</a></li><li><a href=#buzzs-secret-watch-part-2-100pt>Buzz&rsquo;s Secret Watch (Part 2) (100pt)</a></li></ul></li><li><a href=#お気持ち>お気持ち</a></li></ul></nav></div></span></div><article class=post itemscope itemtype=http://schema.org/BlogPosting><header><h1 class=posttitle itemprop="name headline">Space Heroes CTF Writeup</h1><div class=meta><div class=postdate>投稿日: <time datetime="2022-04-04 10:42:52 +0900 +0900" itemprop=datePublished>2022-04-04 10:42</time></div><div class=lastmoddate>最終更新日: <time datetime="2022-04-04 19:24:49 +0900 +0900" itemprop=dateModified>2022-04-04 19:24</time></div><div class=article-category><i class="fas fa-archive"></i>
+<a class=category-link href=/categories/ctf>CTF</a></div><div class=article-tag><i class="fas fa-tag"></i>
 <a class=tag-link href=/tags/writeup rel=tag>Writeup</a>
 ,
 <a class=tag-link href=/tags/ctf rel=tag>CTF</a>
 ,
 <a class=tag-link href=/tags/%E5%82%99%E5%BF%98 rel=tag>備忘</a>
 ,
-<a class=tag-link href=/tags/opencv rel=tag>OpenCV</a>
-</div>
-</div>
-</header>
-<div class=content itemprop=articleBody>
-<p>2022/04/01 ~ 2022/04/03まで開催された<a href=https://ctftime.org/event/1567/>Space Heroes CTF</a>のwriteup。<br>
-チーム DCDC で出場した。</p>
-<ul>
-<li>個人得点：754pt</li>
-<li>チーム得点：2454pt</li>
-<li>チーム順位：62位 / 778チーム</li>
-</ul>
-<p>forensics問しか解いてないけど、OpenCVでガチャガチャやったので備忘として残しておく。</p>
-<h2 id=forensics>Forensics</h2>
-<h3 id=star-pcap-100pt>Star Pcap (100pt)</h3>
-<p>pcapファイルが渡される。<br>
-中身はICMPのみが取得されているただのパケットキャプチャファイルだが、ICMP codeがASCIIと同期している。<br>
-ICMP Codeを読めばフラグ。</p>
-<p><code>shctf{L0g1c-i$-th3-begiNNing-0f-wi$doM}</code></p>
-<h3 id=netflix-and-ctf-100pt>Netflix and CTF (100pt)</h3>
-<p>pcapファイルが渡される。<br>
-中身はHTTP通信を中心として取得されているただのパケットキャプチャファイル。<br>
-定期的にPOSTしており、<code>/keypress/Lit_〇</code>ではキーを押下したタイミングでPOSTが投げられているっぽい。<br>
-<img src=./img/img01.webp alt=パケットキャプチャ></p>
-<p>Lit_〇の部分を抜粋して結合するとフラグ。</p>
-<p><code>shctf{T1m3-is-th3-ultimat3-curr3Ncy}</code></p>
-<h3 id=the-legend-of-the-chozo-100pt>The Legend of the Chozo (100pt)</h3>
-<p>corruptedData.chrという謎のファイルが渡される。<br>
-バイナリを読むと普通にPNGファイルのファイルヘッダをいい感じに修正すればOK。</p>
-<p>修正前：</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>00000000: <span style=color:#ae81ff>5047</span> 890a 4e0d 0a1a 0d48 <span style=color:#ae81ff>4400</span> <span style=color:#ae81ff>5200</span> <span style=color:#ae81ff>0049</span>  PG..N....HD.R..I
-00000010: <span style=color:#ae81ff>0000</span> 00f0 <span style=color:#ae81ff>0000</span> <span style=color:#ae81ff>0139</span> <span style=color:#ae81ff>0806</span> <span style=color:#ae81ff>0000</span> 00ae c5ad  .......9........
-                    ----snip to EOF---
-</code></pre></div><p>修正後：</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>00000000: <span style=color:#ae81ff>8950</span> 4e47 0d0a 1a0a <span style=color:#ae81ff>0000</span> 000d <span style=color:#ae81ff>4948</span> <span style=color:#ae81ff>4452</span>  .PNG........IHDR
-00000010: <span style=color:#ae81ff>0000</span> 00f0 <span style=color:#ae81ff>0000</span> <span style=color:#ae81ff>0139</span> <span style=color:#ae81ff>0806</span> <span style=color:#ae81ff>0000</span> 00ae c5ad  .......9........
-                    ----snip to EOF---
-</code></pre></div><p>修正するとファイルを開けるようになる。<br>
-画像の中にフラグ。</p>
-<p><img src=./img/CorruptedData.webp alt=修正後ファイル></p>
-<p><code>shctf{CH0Z0_rU1N5}</code></p>
-<h3 id=interstellar-mystery-254pt>Interstellar Mystery (254pt)</h3>
-<ul>
-<li>master0-3.qcow2</li>
-<li>master0-4.qcow2</li>
-</ul>
-<p>という2つのファイルが渡される。<br>
-qcow2はqemuで使われているディスクイメージを単一のファイルにまとめたもの。<br>
-virtualboxを使っている人はvmdkとかを想像するとわかりやすいかも。</p>
-<p>これをLinuxにマウントしていく。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>sudo mkdir /mnt/master0-3
-sudo mkdir /mnt/master0-4
-
-sudo modprobe nbd max_part<span style=color:#f92672>=</span><span style=color:#ae81ff>8</span>
-sudo qemu-nbd --connect<span style=color:#f92672>=</span>/dev/nbd0 ./master0-3.qcow2
-sudo qemu-nbd --connect<span style=color:#f92672>=</span>/dev/nbd1 ./master0-4.qcow2
-
-sudo mount /dev/nbd0 /mnt/master0-3
-<span style=color:#75715e># mount: /mnt/master0-3: wrong fs type, bad option, bad superblock on /dev/nbd0, missing codepage or helper program, or other error.</span>
-sudo mount /dev/nbd1 /mnt/master0-4
-</code></pre></div><p>参考: <a href=https://gist.github.com/shamil/62935d9b456a6f9877b5>https://gist.github.com/shamil/62935d9b456a6f9877b5</a></p>
-<p>master0-3.qcow2がマウントできなかったが、master0-4.qcow2のほうはマウントできた。<br>
-中には<code>e</code>というバイナリファイルだけがあった。<br>
-stringsで文字列抽出し、フラグフォーマットである<code>shctf</code>をgrepで抜き出すとフラグ。<br>
-これ想定解なのか？</p>
-<p><code>shctf{btrfs_is_awsome}</code></p>
-<h3 id=buzzs-secret-watch-part-1-100pt>Buzz&rsquo;s Secret Watch (Part 1) (100pt)</h3>
-<p>なんか8つの点がチカチカする動画が渡される。
-下にGifにした奴を貼っておく。<br>
-<img src=./img/buzzsaw.gif alt=Gifにしたやつ></p>
-<p>8bit = 1byteなのでまあこの辺の点数帯ならASCII文字を表したいんだろうなあと容易に想像ができる。<br>
-人力で読める長さだけど、めんどくさすぎるのでOpenCVでパーサを書いた。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=color:#f92672>import</span> cv2
-<span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
-
-
-coordinates <span style=color:#f92672>=</span> [(<span style=color:#ae81ff>360</span>,<span style=color:#ae81ff>699</span>), (<span style=color:#ae81ff>394</span>,<span style=color:#ae81ff>697</span>), (<span style=color:#ae81ff>430</span>,<span style=color:#ae81ff>700</span>), (<span style=color:#ae81ff>469</span>,<span style=color:#ae81ff>698</span>), (<span style=color:#ae81ff>501</span>,<span style=color:#ae81ff>700</span>), (<span style=color:#ae81ff>537</span>,<span style=color:#ae81ff>694</span>), (<span style=color:#ae81ff>575</span>,<span style=color:#ae81ff>696</span>), (<span style=color:#ae81ff>604</span>,<span style=color:#ae81ff>697</span>)]
-
-
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>onMouse</span>(event, x, y, flags, params):
-    <span style=color:#66d9ef>if</span> event <span style=color:#f92672>==</span> cv2<span style=color:#f92672>.</span>EVENT_LBUTTONDOWN:
-        print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;(</span><span style=color:#e6db74>{</span>x<span style=color:#e6db74>}</span><span style=color:#e6db74>,</span><span style=color:#e6db74>{</span>y<span style=color:#e6db74>}</span><span style=color:#e6db74>)&#34;</span>)
-        print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;COLOR: B,G,R(</span><span style=color:#e6db74>{</span>img[y,x,:]<span style=color:#e6db74>}</span><span style=color:#e6db74>)&#34;</span>)
-
-<span style=color:#75715e>#MOV_PATH = &#34;./buzzsaw.avi&#34;</span>
-MOV_PATH <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;./buzz-bin.avi&#34;</span>
-cap <span style=color:#f92672>=</span> cv2<span style=color:#f92672>.</span>VideoCapture(MOV_PATH)
-
-
-<span style=color:#66d9ef>while</span> <span style=color:#66d9ef>True</span>:
-    ret, img <span style=color:#f92672>=</span> cap<span style=color:#f92672>.</span>read()
-    <span style=color:#75715e>#cv2.imshow(&#34;cap&#34;, img)</span>
-
-    hsv <span style=color:#f92672>=</span> img
-    lower_green<span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>150</span>, <span style=color:#ae81ff>0</span>], dtype <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;uint8&#34;</span>) 
-    upper_green<span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([<span style=color:#ae81ff>30</span>, <span style=color:#ae81ff>255</span>, <span style=color:#ae81ff>30</span>], dtype <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;uint8&#34;</span>)
-
-    chk_green<span style=color:#f92672>=</span> cv2<span style=color:#f92672>.</span>inRange(hsv, lower_green, upper_green)
-    contours, hierarchy <span style=color:#f92672>=</span> cv2<span style=color:#f92672>.</span>findContours(chk_green, cv2<span style=color:#f92672>.</span>RETR_EXTERNAL, cv2<span style=color:#f92672>.</span>CHAIN_APPROX_SIMPLE)
-    <span style=color:#75715e>#cv2.imshow(&#34;green_point&#34;,chk_green)</span>
-    img_contour <span style=color:#f92672>=</span> cv2<span style=color:#f92672>.</span>drawContours(hsv, contours, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, (<span style=color:#ae81ff>255</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>), <span style=color:#ae81ff>3</span>)
-
-    <span style=color:#75715e>#cv2.imshow(&#34;green_path&#34;, img_contour)</span>
-
-    lamps <span style=color:#f92672>=</span> []
-    arr <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span><span style=color:#ae81ff>8</span>
-    <span style=color:#66d9ef>for</span> contour <span style=color:#f92672>in</span> contours:
-        <span style=color:#66d9ef>for</span> i,coordinate <span style=color:#f92672>in</span> enumerate(coordinates):
-            retval <span style=color:#f92672>=</span> cv2<span style=color:#f92672>.</span>pointPolygonTest(contour, coordinate, <span style=color:#66d9ef>False</span>) 
-            <span style=color:#66d9ef>if</span> retval <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>or</span> retval <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
-                arr[i]<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
-            <span style=color:#75715e>#cv2.waitKey(0)</span>
-    <span style=color:#66d9ef>if</span> sum(arr) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>:
-        print(<span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>.</span>join(map(str, arr)))
-
-
-    <span style=color:#75715e>#cv2.setMouseCallback(&#34;cap&#34;, onMouse)</span>
-
-    <span style=color:#75715e># EMERG BRERK</span>
-    <span style=color:#66d9ef>if</span> cv2<span style=color:#f92672>.</span>waitKey(<span style=color:#ae81ff>1</span>) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xFF</span> <span style=color:#f92672>==</span> ord(<span style=color:#e6db74>&#34;q&#34;</span>):
-        <span style=color:#66d9ef>break</span>
-
-cap<span style=color:#f92672>.</span>release()
-cv2<span style=color:#f92672>.</span>destroyAllWindows()
-</code></pre></div><p>OpenCV使ってなさ過ぎて普通に時間がかかった。<br>
-やっていることとしては単純で、動画を1フレーム毎に以下のようなチェックをしている。</p>
-<ul>
-<li>緑の物体が出てきたら輪郭検出を実施</li>
-<li>輪郭内に指定した座標群(coordinates)が入っているかどうかをチェック。</li>
-</ul>
-<p>前に個人が作ったようなCaptchaもどきを邪悪な方法で攻略しようとしたとき以来、OpenCVを触っていなかったためいい再学習の機会になった。<br>
-実際に動かしてみると、やはり明滅で出力されているのがASCII文字列だった。</p>
-<p><code>shctf{Sh3r1ff-tH1s-is-n0-t1m3-t0-pAn1c}</code></p>
-<h3 id=buzzs-secret-watch-part-2-100pt>Buzz&rsquo;s Secret Watch (Part 2) (100pt)</h3>
-<p>Part 1に続きほぼ同じフォーマットの動画が渡される。<br>
-変更点は点滅がクソクソ早くなったことと動画の時間がかなり長くなっていること。<br>
-人力の解読はほぼ不可能なレベルになっていた。<br>
-解法だが、Part 1で書いたパーサで一撃で解けた。めんどくさがらずにちゃんと書いてよかったね。<br>
-出力はELF形式のバイナリだったが、バイナリをstringsで文字列抽出するとフラグが出てくる。</p>
-<p><code>shctf{Th1s-Isnt-Fly1ng-THis-Is-FAlliNg-W1th-Styl3}</code></p>
-<h2 id=お気持ち>お気持ち</h2>
-<p>OpenCV完全に忘れててつらい。<br>
-新年度だし今年は色々とがんばっていき！</p>
-</div>
-</article>
-<div id=footer-post-container>
-<div id=footer-post>
-<div id=nav-footer style=display:none>
-<ul>
-<li><a href=/>Home</a></li>
-<li><a href=/posts>Posts</a></li>
-<li><a href=/categories>Categories</a></li>
-<li><a href=/tags>Tags</a></li>
-<li><a href=/index.xml>Rss</a></li>
-</ul>
-</div>
-<div id=toc-footer style=display:none>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#forensics>Forensics</a>
-<ul>
-<li><a href=#star-pcap-100pt>Star Pcap (100pt)</a></li>
-<li><a href=#netflix-and-ctf-100pt>Netflix and CTF (100pt)</a></li>
-<li><a href=#the-legend-of-the-chozo-100pt>The Legend of the Chozo (100pt)</a></li>
-<li><a href=#interstellar-mystery-254pt>Interstellar Mystery (254pt)</a></li>
-<li><a href=#buzzs-secret-watch-part-1-100pt>Buzz&rsquo;s Secret Watch (Part 1) (100pt)</a></li>
-<li><a href=#buzzs-secret-watch-part-2-100pt>Buzz&rsquo;s Secret Watch (Part 2) (100pt)</a></li>
-</ul>
-</li>
-<li><a href=#お気持ち>お気持ち</a></li>
-</ul>
-</nav>
-</div>
-<div id=share-footer style=display:none>
-<ul>
-<li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&text=Space%20Heroes%20CTF%20Writeup" aria-label=Twitter>
-<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&title=Space%20Heroes%20CTF%20Writeup" aria-label=Linkedin>
-<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="mailto:?subject=Space%20Heroes%20CTF%20Writeup&body=Check out this article: https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f" aria-label=Email>
-<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&title=Space%20Heroes%20CTF%20Writeup" aria-label=Pocket>
-<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&title=Space%20Heroes%20CTF%20Writeup" aria-label=reddit>
-<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&t=Space%20Heroes%20CTF%20Writeup" aria-label="Hacker News">
-<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
-</a>
-</li>
-</ul>
-</div>
-<div id=actions-footer>
-<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
-<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
-<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
-<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
-<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
-<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
-<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
-<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
-</div>
-</div>
-</div>
-<footer id=footer>
-<div class=footer-left>
-Copyright &copy; 2023 xrzhev
-</div>
-<div class=footer-right>
-<nav>
-<ul>
-<li><a href=/>Home</a></li>
-<li><a href=/posts>Posts</a></li>
-<li><a href=/categories>Categories</a></li>
-<li><a href=/tags>Tags</a></li>
-<li><a href=/index.xml>Rss</a></li>
-</ul>
-</nav>
-</div>
-</footer>
-</div>
-</body>
-<link rel=stylesheet href=/lib/font-awesome/css/all.min.css>
-<script src=/lib/jquery/jquery.min.js></script>
-<script src=/js/main.js></script>
-<script src=/js/code-copy.js></script>
-</html>
+<a class=tag-link href=/tags/opencv rel=tag>OpenCV</a></div></div></header><div class=content itemprop=articleBody><p>2022/04/01 ~ 2022/04/03まで開催された<a href=https://ctftime.org/event/1567/>Space Heroes CTF</a>のwriteup。<br>チーム DCDC で出場した。</p><ul><li>個人得点：754pt</li><li>チーム得点：2454pt</li><li>チーム順位：62位 / 778チーム</li></ul><p>forensics問しか解いてないけど、OpenCVでガチャガチャやったので備忘として残しておく。</p><h2 id=forensics>Forensics</h2><h3 id=star-pcap-100pt>Star Pcap (100pt)</h3><p>pcapファイルが渡される。<br>中身はICMPのみが取得されているただのパケットキャプチャファイルだが、ICMP codeがASCIIと同期している。<br>ICMP Codeを読めばフラグ。</p><p><code>shctf{L0g1c-i$-th3-begiNNing-0f-wi$doM}</code></p><h3 id=netflix-and-ctf-100pt>Netflix and CTF (100pt)</h3><p>pcapファイルが渡される。<br>中身はHTTP通信を中心として取得されているただのパケットキャプチャファイル。<br>定期的にPOSTしており、<code>/keypress/Lit_〇</code>ではキーを押下したタイミングでPOSTが投げられているっぽい。<br><img src=./img/img01.webp alt=パケットキャプチャ></p><p>Lit_〇の部分を抜粋して結合するとフラグ。</p><p><code>shctf{T1m3-is-th3-ultimat3-curr3Ncy}</code></p><h3 id=the-legend-of-the-chozo-100pt>The Legend of the Chozo (100pt)</h3><p>corruptedData.chrという謎のファイルが渡される。<br>バイナリを読むと普通にPNGファイルのファイルヘッダをいい感じに修正すればOK。</p><p>修正前：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>00000000: <span style=color:#ae81ff>5047</span> 890a 4e0d 0a1a 0d48 <span style=color:#ae81ff>4400</span> <span style=color:#ae81ff>5200</span> <span style=color:#ae81ff>0049</span>  PG..N....HD.R..I
+</span></span><span style=display:flex><span>00000010: <span style=color:#ae81ff>0000</span> 00f0 <span style=color:#ae81ff>0000</span> <span style=color:#ae81ff>0139</span> <span style=color:#ae81ff>0806</span> <span style=color:#ae81ff>0000</span> 00ae c5ad  .......9........
+</span></span><span style=display:flex><span>                    ----snip to EOF---
+</span></span></code></pre></div><p>修正後：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>00000000: <span style=color:#ae81ff>8950</span> 4e47 0d0a 1a0a <span style=color:#ae81ff>0000</span> 000d <span style=color:#ae81ff>4948</span> <span style=color:#ae81ff>4452</span>  .PNG........IHDR
+</span></span><span style=display:flex><span>00000010: <span style=color:#ae81ff>0000</span> 00f0 <span style=color:#ae81ff>0000</span> <span style=color:#ae81ff>0139</span> <span style=color:#ae81ff>0806</span> <span style=color:#ae81ff>0000</span> 00ae c5ad  .......9........
+</span></span><span style=display:flex><span>                    ----snip to EOF---
+</span></span></code></pre></div><p>修正するとファイルを開けるようになる。<br>画像の中にフラグ。</p><p><img src=./img/CorruptedData.webp alt=修正後ファイル></p><p><code>shctf{CH0Z0_rU1N5}</code></p><h3 id=interstellar-mystery-254pt>Interstellar Mystery (254pt)</h3><ul><li>master0-3.qcow2</li><li>master0-4.qcow2</li></ul><p>という2つのファイルが渡される。<br>qcow2はqemuで使われているディスクイメージを単一のファイルにまとめたもの。<br>virtualboxを使っている人はvmdkとかを想像するとわかりやすいかも。</p><p>これをLinuxにマウントしていく。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>sudo mkdir /mnt/master0-3
+</span></span><span style=display:flex><span>sudo mkdir /mnt/master0-4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo modprobe nbd max_part<span style=color:#f92672>=</span><span style=color:#ae81ff>8</span>
+</span></span><span style=display:flex><span>sudo qemu-nbd --connect<span style=color:#f92672>=</span>/dev/nbd0 ./master0-3.qcow2
+</span></span><span style=display:flex><span>sudo qemu-nbd --connect<span style=color:#f92672>=</span>/dev/nbd1 ./master0-4.qcow2
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo mount /dev/nbd0 /mnt/master0-3
+</span></span><span style=display:flex><span><span style=color:#75715e># mount: /mnt/master0-3: wrong fs type, bad option, bad superblock on /dev/nbd0, missing codepage or helper program, or other error.</span>
+</span></span><span style=display:flex><span>sudo mount /dev/nbd1 /mnt/master0-4
+</span></span></code></pre></div><p>参考: <a href=https://gist.github.com/shamil/62935d9b456a6f9877b5>https://gist.github.com/shamil/62935d9b456a6f9877b5</a></p><p>master0-3.qcow2がマウントできなかったが、master0-4.qcow2のほうはマウントできた。<br>中には<code>e</code>というバイナリファイルだけがあった。<br>stringsで文字列抽出し、フラグフォーマットである<code>shctf</code>をgrepで抜き出すとフラグ。<br>これ想定解なのか？</p><p><code>shctf{btrfs_is_awsome}</code></p><h3 id=buzzs-secret-watch-part-1-100pt>Buzz&rsquo;s Secret Watch (Part 1) (100pt)</h3><p>なんか8つの点がチカチカする動画が渡される。
+下にGifにした奴を貼っておく。<br><img src=./img/buzzsaw.gif alt=Gifにしたやつ></p><p>8bit = 1byteなのでまあこの辺の点数帯ならASCII文字を表したいんだろうなあと容易に想像ができる。<br>人力で読める長さだけど、めんどくさすぎるのでOpenCVでパーサを書いた。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#f92672>import</span> cv2
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>coordinates <span style=color:#f92672>=</span> [(<span style=color:#ae81ff>360</span>,<span style=color:#ae81ff>699</span>), (<span style=color:#ae81ff>394</span>,<span style=color:#ae81ff>697</span>), (<span style=color:#ae81ff>430</span>,<span style=color:#ae81ff>700</span>), (<span style=color:#ae81ff>469</span>,<span style=color:#ae81ff>698</span>), (<span style=color:#ae81ff>501</span>,<span style=color:#ae81ff>700</span>), (<span style=color:#ae81ff>537</span>,<span style=color:#ae81ff>694</span>), (<span style=color:#ae81ff>575</span>,<span style=color:#ae81ff>696</span>), (<span style=color:#ae81ff>604</span>,<span style=color:#ae81ff>697</span>)]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>onMouse</span>(event, x, y, flags, params):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> event <span style=color:#f92672>==</span> cv2<span style=color:#f92672>.</span>EVENT_LBUTTONDOWN:
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;(</span><span style=color:#e6db74>{</span>x<span style=color:#e6db74>}</span><span style=color:#e6db74>,</span><span style=color:#e6db74>{</span>y<span style=color:#e6db74>}</span><span style=color:#e6db74>)&#34;</span>)
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;COLOR: B,G,R(</span><span style=color:#e6db74>{</span>img[y,x,:]<span style=color:#e6db74>}</span><span style=color:#e6db74>)&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#MOV_PATH = &#34;./buzzsaw.avi&#34;</span>
+</span></span><span style=display:flex><span>MOV_PATH <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;./buzz-bin.avi&#34;</span>
+</span></span><span style=display:flex><span>cap <span style=color:#f92672>=</span> cv2<span style=color:#f92672>.</span>VideoCapture(MOV_PATH)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> <span style=color:#66d9ef>True</span>:
+</span></span><span style=display:flex><span>    ret, img <span style=color:#f92672>=</span> cap<span style=color:#f92672>.</span>read()
+</span></span><span style=display:flex><span>    <span style=color:#75715e>#cv2.imshow(&#34;cap&#34;, img)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    hsv <span style=color:#f92672>=</span> img
+</span></span><span style=display:flex><span>    lower_green<span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>150</span>, <span style=color:#ae81ff>0</span>], dtype <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;uint8&#34;</span>) 
+</span></span><span style=display:flex><span>    upper_green<span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([<span style=color:#ae81ff>30</span>, <span style=color:#ae81ff>255</span>, <span style=color:#ae81ff>30</span>], dtype <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;uint8&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    chk_green<span style=color:#f92672>=</span> cv2<span style=color:#f92672>.</span>inRange(hsv, lower_green, upper_green)
+</span></span><span style=display:flex><span>    contours, hierarchy <span style=color:#f92672>=</span> cv2<span style=color:#f92672>.</span>findContours(chk_green, cv2<span style=color:#f92672>.</span>RETR_EXTERNAL, cv2<span style=color:#f92672>.</span>CHAIN_APPROX_SIMPLE)
+</span></span><span style=display:flex><span>    <span style=color:#75715e>#cv2.imshow(&#34;green_point&#34;,chk_green)</span>
+</span></span><span style=display:flex><span>    img_contour <span style=color:#f92672>=</span> cv2<span style=color:#f92672>.</span>drawContours(hsv, contours, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, (<span style=color:#ae81ff>255</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>), <span style=color:#ae81ff>3</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>#cv2.imshow(&#34;green_path&#34;, img_contour)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    lamps <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>    arr <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span><span style=color:#ae81ff>8</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> contour <span style=color:#f92672>in</span> contours:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i,coordinate <span style=color:#f92672>in</span> enumerate(coordinates):
+</span></span><span style=display:flex><span>            retval <span style=color:#f92672>=</span> cv2<span style=color:#f92672>.</span>pointPolygonTest(contour, coordinate, <span style=color:#66d9ef>False</span>) 
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> retval <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>or</span> retval <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>                arr[i]<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>#cv2.waitKey(0)</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> sum(arr) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>.</span>join(map(str, arr)))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>#cv2.setMouseCallback(&#34;cap&#34;, onMouse)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># EMERG BRERK</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> cv2<span style=color:#f92672>.</span>waitKey(<span style=color:#ae81ff>1</span>) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xFF</span> <span style=color:#f92672>==</span> ord(<span style=color:#e6db74>&#34;q&#34;</span>):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cap<span style=color:#f92672>.</span>release()
+</span></span><span style=display:flex><span>cv2<span style=color:#f92672>.</span>destroyAllWindows()
+</span></span></code></pre></div><p>OpenCV使ってなさ過ぎて普通に時間がかかった。<br>やっていることとしては単純で、動画を1フレーム毎に以下のようなチェックをしている。</p><ul><li>緑の物体が出てきたら輪郭検出を実施</li><li>輪郭内に指定した座標群(coordinates)が入っているかどうかをチェック。</li></ul><p>前に個人が作ったようなCaptchaもどきを邪悪な方法で攻略しようとしたとき以来、OpenCVを触っていなかったためいい再学習の機会になった。<br>実際に動かしてみると、やはり明滅で出力されているのがASCII文字列だった。</p><p><code>shctf{Sh3r1ff-tH1s-is-n0-t1m3-t0-pAn1c}</code></p><h3 id=buzzs-secret-watch-part-2-100pt>Buzz&rsquo;s Secret Watch (Part 2) (100pt)</h3><p>Part 1に続きほぼ同じフォーマットの動画が渡される。<br>変更点は点滅がクソクソ早くなったことと動画の時間がかなり長くなっていること。<br>人力の解読はほぼ不可能なレベルになっていた。<br>解法だが、Part 1で書いたパーサで一撃で解けた。めんどくさがらずにちゃんと書いてよかったね。<br>出力はELF形式のバイナリだったが、バイナリをstringsで文字列抽出するとフラグが出てくる。</p><p><code>shctf{Th1s-Isnt-Fly1ng-THis-Is-FAlliNg-W1th-Styl3}</code></p><h2 id=お気持ち>お気持ち</h2><p>OpenCV完全に忘れててつらい。<br>新年度だし今年は色々とがんばっていき！</p></div></article><div id=footer-post-container><div id=footer-post><div id=nav-footer style=display:none><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/categories>Categories</a></li><li><a href=/tags>Tags</a></li><li><a href=/index.xml>Rss</a></li></ul></div><div id=toc-footer style=display:none><nav id=TableOfContents><ul><li><a href=#forensics>Forensics</a><ul><li><a href=#star-pcap-100pt>Star Pcap (100pt)</a></li><li><a href=#netflix-and-ctf-100pt>Netflix and CTF (100pt)</a></li><li><a href=#the-legend-of-the-chozo-100pt>The Legend of the Chozo (100pt)</a></li><li><a href=#interstellar-mystery-254pt>Interstellar Mystery (254pt)</a></li><li><a href=#buzzs-secret-watch-part-1-100pt>Buzz&rsquo;s Secret Watch (Part 1) (100pt)</a></li><li><a href=#buzzs-secret-watch-part-2-100pt>Buzz&rsquo;s Secret Watch (Part 2) (100pt)</a></li></ul></li><li><a href=#お気持ち>お気持ち</a></li></ul></nav></div><div id=share-footer style=display:none><ul><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&text=Space%20Heroes%20CTF%20Writeup" aria-label=Twitter><i class="fab fa-twitter fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&title=Space%20Heroes%20CTF%20Writeup" aria-label=Linkedin><i class="fab fa-linkedin fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=Space%20Heroes%20CTF%20Writeup&body=Check out this article: https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f" aria-label=Email><i class="fas fa-envelope fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&title=Space%20Heroes%20CTF%20Writeup" aria-label=Pocket><i class="fab fa-get-pocket fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&title=Space%20Heroes%20CTF%20Writeup" aria-label=reddit><i class="fab fa-reddit fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fxrzhev.com%2fposts%2f2022-04-04%2f&t=Space%20Heroes%20CTF%20Writeup" aria-label="Hacker News"><i class="fab fa-hacker-news fa-lg" aria-hidden=true></i></a></li></ul></div><div id=actions-footer><a id=menu-toggle class=icon href=# onclick='return $("#nav-footer").toggle(),!1' aria-label=Menu><i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick='return $("#toc-footer").toggle(),!1' aria-label=TOC><i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick='return $("#share-footer").toggle(),!1' aria-label=Share><i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick='$("html, body").animate({scrollTop:0},"fast")' aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a></div></div></div><footer id=footer><div class=footer-left>Copyright &copy; 2025 xrzhev</div><div class=footer-right><nav><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/categories>Categories</a></li><li><a href=/tags>Tags</a></li><li><a href=/index.xml>Rss</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=/lib/font-awesome/css/all.min.css><script src=/lib/jquery/jquery.min.js></script><script src=/js/main.js></script><script src=/js/code-copy.js></script></html>
