@@ -1,1 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Xrzheaven</title><link>https://xrzhev.com/</link><description>Recent content on Xrzheaven</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>xrzhev</copyright><lastBuildDate>Sat, 26 Apr 2025 09:32:38 +0900</lastBuildDate><atom:link href="https://xrzhev.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Aterm WG1800HP2のrootを取る</title><link>https://xrzhev.com/posts/2024-08-17/</link><pubDate>Sat, 17 Aug 2024 00:00:00 +0900</pubDate><guid>https://xrzhev.com/posts/2024-08-17/</guid><description>&lt;p>ハードウェアでガチャガチャ遊びたくなった！！ので中古の安いwifiルーターでrootシェルを取ってファイルシステムを覗いてみる&lt;/p></description></item><item><title>mitmproxyにおけるリクエスト編集の末尾改行文字の仕様</title><link>https://xrzhev.com/posts/2022-09-22/</link><pubDate>Thu, 22 Sep 2022 16:14:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-09-22/</guid><description>&lt;p>mitmproxyを使っていて「ん？」となる挙動があったので備忘として記録します。&lt;/p></description></item><item><title>ひとりセキュリティキャンプ開会式</title><link>https://xrzhev.com/posts/2022-08-11/</link><pubDate>Wed, 10 Aug 2022 15:25:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-08-11/</guid><description>ひとりセキュリティ・キャンプを開催します。 ひとりセキュリティキャンプとは ただセキュリティの勉強をするだけです。一人で。 目的をある程度公開し、</description></item><item><title>SECCON Beginners CTF 2022 Writeup</title><link>https://xrzhev.com/posts/2022-06-05/</link><pubDate>Sun, 05 Jun 2022 14:42:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-06-05/</guid><description>2022/06/04 ~ 2022/06/05まで開催されたSECCON Beginners CTF 2022のwriteup。 チーム DCDC で出場した。 チーム得点：2108pt チーム順位：14</description></item><item><title>マスタリング寝具</title><link>https://xrzhev.com/posts/2022-06-02/</link><pubDate>Thu, 02 Jun 2022 16:55:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-06-02/</guid><description>はじめに ここ2022年が始まってから数か月もの間、微弱な腰痛になやまされていた。 程度としては「全然歩いたり立ったりできる、でも生活の節々で少</description></item><item><title>ロシア軍の移動体通信電子戦技術の考察</title><link>https://xrzhev.com/posts/2022-04-20/</link><pubDate>Wed, 20 Apr 2022 20:29:19 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-20/</guid><description>概要 本記事はロシアが保有する電子戦システム「Leer-3(Леер-3)」に内包されている移動体通信電子戦システムの考察、および移動体通信の</description></item><item><title>メールのドメイン認証まとめ</title><link>https://xrzhev.com/posts/2022-04-06/</link><pubDate>Wed, 06 Apr 2022 20:12:19 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-06/</guid><description>すでに枯れた技術なのにミドルウェアの設定がめんどくさいメールサーバー。 メールサーバーを作るとき、色々見ながら設定はするけどよくわからんドメイ</description></item><item><title>Space Heroes CTF Writeup</title><link>https://xrzhev.com/posts/2022-04-04/</link><pubDate>Mon, 04 Apr 2022 10:42:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-04/</guid><description>2022/04/01 ~ 2022/04/03まで開催されたSpace Heroes CTFのwriteup。 チーム DCDC で出場した。 個人得点：754pt チーム得点：2454pt チ</description></item><item><title>Github ActionsでHugoを自動デプロイさせる</title><link>https://xrzhev.com/posts/2022-03-31/</link><pubDate>Fri, 01 Apr 2022 20:12:34 +0900</pubDate><guid>https://xrzhev.com/posts/2022-03-31/</guid><description>経緯 手動でサーバーに向けてHugoで書いた記事のデプロイをするのがめんどくさい。 手元に同一の記事データやテーマファイルがないと色々厳しいため</description></item><item><title>ブログを作った</title><link>https://xrzhev.com/posts/2022-04-01/</link><pubDate>Thu, 31 Mar 2022 16:51:11 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-01/</guid><description>作った理由とか 私はすでにはてなブログ (net-nyan-cat)を持っている。(大して記事書いてないけど) しかしながら昨今の事情でいろいろや</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Xrzheaven</title><link>https://xrzhev.com/</link><description>Recent content on Xrzheaven</description><generator>Hugo</generator><language>ja-jp</language><copyright>xrzhev</copyright><lastBuildDate>Wed, 21 Jan 2026 19:47:14 +0900</lastBuildDate><atom:link href="https://xrzhev.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Aterm WG1800HP2のrootを取る</title><link>https://xrzhev.com/posts/2024-08-17/</link><pubDate>Sat, 17 Aug 2024 00:00:00 +0900</pubDate><guid>https://xrzhev.com/posts/2024-08-17/</guid><description>&lt;p&gt;ハードウェアでガチャガチャ遊びたくなった！！ので中古の安いwifiルーターでrootシェルを取ってファイルシステムを覗いてみる&lt;/p&gt;</description></item><item><title>mitmproxyにおけるリクエスト編集の末尾改行文字の仕様</title><link>https://xrzhev.com/posts/2022-09-22/</link><pubDate>Thu, 22 Sep 2022 16:14:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-09-22/</guid><description>&lt;p&gt;mitmproxyを使っていて「ん？」となる挙動があったので備忘として記録します。&lt;/p&gt;</description></item><item><title>ひとりセキュリティキャンプ開会式</title><link>https://xrzhev.com/posts/2022-08-11/</link><pubDate>Wed, 10 Aug 2022 15:25:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-08-11/</guid><description>&lt;p&gt;ひとりセキュリティ・キャンプを開催します。&lt;/p&gt;
+&lt;h2 id="ひとりセキュリティキャンプとは"&gt;ひとりセキュリティキャンプとは&lt;/h2&gt;
+&lt;p&gt;ただセキュリティの勉強をするだけです。一人で。&lt;br&gt;
+目的をある程度公開し、自身の勉強した内容やコードを記事として書くことでモチベーションの維持や、学んだ内容や作成したプログラムを公開することで新しく学習していく人たちへの足掛かりになればいいと考えています。&lt;br&gt;
+あまり深い意味はないんですが、現在私が26歳ということもあり、IPAのセキュリティ・キャンプに参加できません。（参加できるのが25歳までなんですよね）&lt;br&gt;
+参加したかったなあ…という懺悔の気持ちをこめ、このような名前にしています。&lt;br&gt;
+と、いうわけでこのような企画を勝手に一人で始めることとしました。&lt;br&gt;
+期限は2022年末まで。まとまったらブログの記事としてあげていく予定です。&lt;/p&gt;</description></item><item><title>SECCON Beginners CTF 2022 Writeup</title><link>https://xrzhev.com/posts/2022-06-05/</link><pubDate>Sun, 05 Jun 2022 14:42:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-06-05/</guid><description>&lt;p&gt;2022/06/04 ~ 2022/06/05まで開催された&lt;a href="https://www.seccon.jp/2022/seccon_beginners/content.html"&gt;SECCON Beginners CTF 2022&lt;/a&gt;のwriteup。&lt;br&gt;
+チーム DCDC で出場した。  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;チーム得点：2108pt&lt;/li&gt;
+&lt;li&gt;チーム順位：14位 / 891チーム&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;人数制限がないCTF？だったため、DCDCで動けるメンバーが多数動員され、ライブ感のある楽しいCTFだった。&lt;br&gt;
+DCDCメンバーからはSECCON4b作問者メンバーがおり、すごいチームだなあと感じる。&lt;br&gt;
+以下、私の解いた問題のWriteup。&lt;/p&gt;</description></item><item><title>マスタリング寝具</title><link>https://xrzhev.com/posts/2022-06-02/</link><pubDate>Thu, 02 Jun 2022 16:55:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-06-02/</guid><description>&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;ここ2022年が始まってから数か月もの間、微弱な腰痛になやまされていた。&lt;br&gt;
+程度としては「全然歩いたり立ったりできる、でも生活の節々で少しピキっと鋭い痛みがくる感じ」というもの。&lt;br&gt;
+学生時代にスポーツでヘルニアをやっていたこともあって、再発を懸念していた。&lt;/p&gt;</description></item><item><title>ロシア軍の移動体通信電子戦技術の考察</title><link>https://xrzhev.com/posts/2022-04-20/</link><pubDate>Wed, 20 Apr 2022 20:29:19 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-20/</guid><description>&lt;h2 id="概要"&gt;概要&lt;/h2&gt;
+&lt;p&gt;本記事はロシアが保有する電子戦システム「Leer-3(Леер-3)」に内包されている移動体通信電子戦システムの考察、および移動体通信の電子戦技術を考察した文章である。&lt;br&gt;
+移動体通信電子戦というのはいわば携帯電話回線への干渉・攻撃活動であり、本記事では主に移動体通信におけるSMS(Short Message Service)に対しての電子戦アクションについてまとめている。&lt;br&gt;
+Leer-3に関する詳細な情報は当然軍事機密であり、インターネット上で収集した記事群から抜粋しているため、確実な情報ではないことを理解してほしい。&lt;/p&gt;</description></item><item><title>メールのドメイン認証まとめ</title><link>https://xrzhev.com/posts/2022-04-06/</link><pubDate>Wed, 06 Apr 2022 20:12:19 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-06/</guid><description>&lt;p&gt;すでに枯れた技術なのにミドルウェアの設定がめんどくさいメールサーバー。&lt;br&gt;
+メールサーバーを作るとき、色々見ながら設定はするけどよくわからんドメイン認証。&lt;br&gt;
+新年度ということもあり、初心者でもメールサーバーを構築するにあたって使うであろうドメイン認証の一覧を簡単な説明を載せて書いておく。&lt;br&gt;
+各技術はそれ相応に深いもので、本ページだけでの理解は難しいため、適宜色々な解説サイトやRFCを読み込んで仕様を理解してほしい。&lt;/p&gt;</description></item><item><title>Space Heroes CTF Writeup</title><link>https://xrzhev.com/posts/2022-04-04/</link><pubDate>Mon, 04 Apr 2022 10:42:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-04/</guid><description>&lt;p&gt;2022/04/01 ~ 2022/04/03まで開催された&lt;a href="https://ctftime.org/event/1567/"&gt;Space Heroes CTF&lt;/a&gt;のwriteup。&lt;br&gt;
+チーム DCDC で出場した。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;個人得点：754pt&lt;/li&gt;
+&lt;li&gt;チーム得点：2454pt&lt;/li&gt;
+&lt;li&gt;チーム順位：62位 / 778チーム&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;forensics問しか解いてないけど、OpenCVでガチャガチャやったので備忘として残しておく。&lt;/p&gt;</description></item><item><title>Github ActionsでHugoを自動デプロイさせる</title><link>https://xrzhev.com/posts/2022-03-31/</link><pubDate>Fri, 01 Apr 2022 20:12:34 +0900</pubDate><guid>https://xrzhev.com/posts/2022-03-31/</guid><description>&lt;h2 id="経緯"&gt;経緯&lt;/h2&gt;
+&lt;p&gt;手動でサーバーに向けてHugoで書いた記事のデプロイをするのがめんどくさい。&lt;br&gt;
+手元に同一の記事データやテーマファイルがないと色々厳しいため、GithubでHugoのコンテンツをまるっと管理する形にした。&lt;br&gt;
+調べてみるとこのようなスタイルでコンテンツを管理している人が結構多く、同時にHugoからの記事のデプロイもGithub Actionsを利用しているケースが散見されたため、自分もGithub Actionsに入門することにした。&lt;/p&gt;</description></item><item><title>ブログを作った</title><link>https://xrzhev.com/posts/2022-04-01/</link><pubDate>Thu, 31 Mar 2022 16:51:11 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-01/</guid><description>&lt;h2 id="作った理由とか"&gt;作った理由とか&lt;/h2&gt;
+&lt;p&gt;私はすでに&lt;a href="https://xrzhev.hatenablog.com/"&gt;はてなブログ (net-nyan-cat)&lt;/a&gt;を持っている。(大して記事書いてないけど)&lt;br&gt;
+しかしながら&lt;strong&gt;昨今の事情でいろいろやっていきにくい&lt;/strong&gt;ところがあるため、特に使っていなかったVPSを利用して自分でブログを作成し運用することにした。&lt;/p&gt;</description></item><item><title>about me</title><link>https://xrzhev.com/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://xrzhev.com/about/</guid><description>&lt;h1 id="abount-me"&gt;Abount Me&lt;/h1&gt;
+&lt;h2 id="whois"&gt;whois&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;tuchiryuu&lt;/strong&gt; a.k.a &lt;strong&gt;xrzhev&lt;/strong&gt;&lt;br&gt;
+つちりゅうとお呼びください
+&lt;picture&gt;
+ &lt;source srcset="https://xrzhev.com/about/img/PB231920_hu_77ec41c5eaeffdce.webp" type="image/webp"&gt;
+ &lt;img src="https://xrzhev.com/about/img/PB231920.jpg"
+ width="640"
+ height="480"
+ alt=""
+ loading="lazy"&gt;
+ &lt;/picture&gt;&lt;/p&gt;
+&lt;h2 id="activities"&gt;activities&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CTF
+&lt;ul&gt;
+&lt;li&gt;BunkyoWesterns
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://x.com/BunkyoWestern"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ctftime.org/team/269765/"&gt;CTFTime&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;趣味
+&lt;ul&gt;
+&lt;li&gt;ダイビング
+&lt;ul&gt;
+&lt;li&gt;PADI OpenWater&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;バイク
+&lt;ul&gt;
+&lt;li&gt;CRF250M&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;個人事業
+&lt;ul&gt;
+&lt;li&gt;クラウドインフラ構築 / IaCの導入コンサルティングを主軸としています&lt;/li&gt;
+&lt;li&gt;インフラ技術ならお任せください&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

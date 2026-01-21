@@ -1,1 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenCV on Xrzheaven</title><link>https://xrzhev.com/tags/opencv/</link><description>Recent content in OpenCV on Xrzheaven</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>xrzhev</copyright><lastBuildDate>Mon, 04 Apr 2022 19:24:49 +0900</lastBuildDate><atom:link href="https://xrzhev.com/tags/opencv/index.xml" rel="self" type="application/rss+xml"/><item><title>Space Heroes CTF Writeup</title><link>https://xrzhev.com/posts/2022-04-04/</link><pubDate>Mon, 04 Apr 2022 10:42:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-04/</guid><description>2022/04/01 ~ 2022/04/03まで開催されたSpace Heroes CTFのwriteup。 チーム DCDC で出場した。 個人得点：754pt チーム得点：2454pt チ</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenCV on Xrzheaven</title><link>https://xrzhev.com/tags/opencv/</link><description>Recent content in OpenCV on Xrzheaven</description><generator>Hugo</generator><language>ja-jp</language><copyright>xrzhev</copyright><lastBuildDate>Mon, 04 Apr 2022 19:24:49 +0900</lastBuildDate><atom:link href="https://xrzhev.com/tags/opencv/index.xml" rel="self" type="application/rss+xml"/><item><title>Space Heroes CTF Writeup</title><link>https://xrzhev.com/posts/2022-04-04/</link><pubDate>Mon, 04 Apr 2022 10:42:52 +0900</pubDate><guid>https://xrzhev.com/posts/2022-04-04/</guid><description>&lt;p&gt;2022/04/01 ~ 2022/04/03まで開催された&lt;a href="https://ctftime.org/event/1567/"&gt;Space Heroes CTF&lt;/a&gt;のwriteup。&lt;br&gt;
+チーム DCDC で出場した。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;個人得点：754pt&lt;/li&gt;
+&lt;li&gt;チーム得点：2454pt&lt;/li&gt;
+&lt;li&gt;チーム順位：62位 / 778チーム&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;forensics問しか解いてないけど、OpenCVでガチャガチャやったので備忘として残しておく。&lt;/p&gt;</description></item></channel></rss>
